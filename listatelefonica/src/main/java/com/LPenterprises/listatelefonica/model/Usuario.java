@@ -1,10 +1,11 @@
 package com.LPenterprises.listatelefonica.model;
 
+import java.time.LocalDate;
 import javax.persistence.*;
 
 
 @Entity
-public class Usuario {
+public class Usuario{
 	
 	@Id
 	@GeneratedValue
@@ -18,8 +19,10 @@ public class Usuario {
 	
 	@Column(nullable=false)
 	private String senha;
-
-
+	
+	@Column(nullable=false)
+	private LocalDate dataNasc;
+	
 	public Long getId() {
 		return id;
 	}
@@ -52,31 +55,14 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
+	public LocalDate getDataNasc() {
+		return dataNasc;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Usuario other = (Usuario) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
+	public void setDataNasc(LocalDate dataNasc) {
+		this.dataNasc = dataNasc;
 	}
-	
+
 	
 	
 	
