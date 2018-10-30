@@ -32,7 +32,7 @@ public class UsuarioController {
 		
 	}
 	
-	@PostMapping("/usario")
+	@PostMapping("/usuario")
 	public Usuario createUsuario(@Valid @RequestBody Usuario usuario) {
 		return usuarioRepository.save(usuario);
 		
