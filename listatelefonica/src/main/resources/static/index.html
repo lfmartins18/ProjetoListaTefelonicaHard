@@ -1,46 +1,56 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
-   <head>
-     <meta charset="utf-8">
-     <title>Iniciando a API</title>
-   </head>
-   
-   <body>
-     <script type="text/javascript">
-      
-     </script>
-   </body>
-=======
-<html>
 <head>
 <title>primeiro</title>
+<meta charset="utf-8">
 </head>
 
 <body>
-iae
 
+<h2 style="text-align: center">Lista de Pessoas</h2>
 <script type="text/javascript">
-
-let.xhr = new XMLHttpRequest();
+/*
+let xhr = new XMLHttpRequest();
 
 xhr.open('GET', '/pessoa')
 
 xhr.onload = function () {
-	alert(`Status: ${this.status} -- ${this.responseText}`)
-	};
+	if(this.status !=200){
+	console.log("Erro!!");
+	}
+	else{
+		console.log(this.responseText);
+	
+	    let a = JSON.parse(this.responseText);
+	    
+	    console.log(a);
+	}
 
-xhr.onerror = () => alert('ERROR!');
+  };
+	xhr.onerror = () => alert('ERROR!');
 
-xhr.send();
+	xhr.send();
+*/
 
+  let xhr2 = new XMLHttpRequest();
+  xhr2.open('POST', '/pessoa');
+  
+  xhr2.onload = function(){
+	  if(this.status == 200){
+		  console.log("Sucesso");
+	      console.log(JSON.parse(this.responseText));
+	  }
+  };
+     xhr2.setRequestHeader('Content-Type', 'application/json');
+     
+     let new_pessoa = {"contato": "João", "descricao": 10};
 
-</script>
+     xhr2.send(JSON.stringify(new_pessoa));    
+ </script>
 
 
 
 
 </body>
 
->>>>>>> 37b659eabb43f323a99460c938f41ae6afe90443
 </html>
