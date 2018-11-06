@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>primeiro</title>
+</head>
+
+<body>
+iae
+
+<script type="text/javascript">
+
+let.xhr = new XMLHttpRequest();
+
+xhr.open('GET', '/pessoa')
+
+xhr.onload = function () {
+	alert(`Status: ${this.status} -- ${this.responseText}`)
+	};
+
+xhr.onerror = () => alert('ERROR!');
+
+xhr.send();
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
