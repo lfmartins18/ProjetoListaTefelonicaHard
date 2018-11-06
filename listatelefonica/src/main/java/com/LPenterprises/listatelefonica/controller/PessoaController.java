@@ -29,6 +29,12 @@ public class PessoaController {
     	return pessoaRepository.findAll(pageable);
     }
 
+    @GetMapping("/pessoa/{pessoaId}")
+    public Pessoa getPessoa(@PathVariable Long pessoaId) {
+     return pessoaRepository.findById(pessoaId)
+    		 .orElseThrow(() -> new ResourceNotFoundException("Erro!!" +pessoaId));
+    }
+    
     @PostMapping("/pessoa")
     public Pessoa createPessoa (@Valid @RequestBody Pessoa pessoa) {
       return pessoaRepository.save(pessoa);	
