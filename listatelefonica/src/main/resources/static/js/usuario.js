@@ -24,4 +24,19 @@
 	};
   }
 	 user.send();
-	
+	 
+	 let setarUsuario = new XMLHttpRequest();
+	 setarUsuario.open('POST', '/usuario');
+	  
+	 setarUsuario.onload = function setarDados(){
+		  if(this.status == 200){
+			  console.log("Sucesso");
+		      console.log(JSON.parse(this.responseText));
+		  }
+	  };
+	  setarUsuario.setRequestHeader('Content-Type', 'application/json');
+	     
+	     let new_usuario = {"nome": "Jair", "email": "ptnao@gmail.com",
+	    		 "senha": "jairsalvador", "1970-05-20"};
+
+	     setarUsuario.send(JSON.stringify(new_usuario)); 
