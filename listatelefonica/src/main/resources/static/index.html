@@ -1,52 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<title>primeiro</title>
+<title>Usuario</title>
 <meta charset="utf-8">
+<style>
+table, th, h2 {
+	border: 1px solid black;
+}
+</style>
+<script type="text/javascript" src="js/usuario.js"></script>
 </head>
 
 <body>
 
-<h2 style="text-align: center">Lista de Pessoas</h2>
-<script type="text/javascript">
-/*
-let xhr = new XMLHttpRequest();
+	<h2 style="text-align: center">Posições</h2>
 
-xhr.open('GET', '/pessoa')
 
-xhr.onload = function () {
-	if(this.status !=200){
-	console.log("Erro!!");
-	}
-	else{
-		console.log(this.responseText);
-	
-	    let a = JSON.parse(this.responseText);
-	    
-	    console.log(a);
-	}
-
-  };
-	xhr.onerror = () => alert('ERROR!');
-
-	xhr.send();
-*/
-
-  let xhr2 = new XMLHttpRequest();
-  xhr2.open('POST', '/pessoa');
-  
-  xhr2.onload = function(){
-	  if(this.status == 200){
-		  console.log("Sucesso");
-	      console.log(JSON.parse(this.responseText));
-	  }
-  };
-     xhr2.setRequestHeader('Content-Type', 'application/json');
-     
-     let new_pessoa = {"contato": "João", "descricao": 10};
-
-     xhr2.send(JSON.stringify(new_pessoa));    
- </script>
+	<table id="Usuario" style="width: 100%">
+		<tr>
+			<th>Nome</th>
+			<th>Email</th>
+			<th>Senha</th>
+			<th>Data nascimento</th>
+		</tr>
+	</table>
 
 
 
