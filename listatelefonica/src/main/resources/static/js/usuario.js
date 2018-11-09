@@ -1,4 +1,4 @@
-    alert('OI');
+   
 	let user = new XMLHttpRequest();
 	
 	user.open('GET', '/usuario');
@@ -25,10 +25,12 @@
   }
 	 user.send();
 	 
+function setarDados(){
+	 
 	 let setarUsuario = new XMLHttpRequest();
 	 setarUsuario.open('POST', '/usuario');
 	  
-	 setarUsuario.onload = function setarDados(){
+	 setarUsuario.onload = function(){
 		  if(this.status == 200){
 			  console.log("Sucesso");
 		      console.log(JSON.parse(this.responseText));
@@ -36,7 +38,14 @@
 	  };
 	  setarUsuario.setRequestHeader('Content-Type', 'application/json');
 	     
-	     let new_usuario = {"nome": "Jair", "email": "ptnao@gmail.com",
-	    		 "senha": "jairsalvador", "1970-05-20"};
+	     let new_usuario = { 
+	    		'nome': document.getElementById('nome').value,
+	    		'email': document.getElementById('email').value,
+	    		'senha': document.getElementById('senha').value,
+	    		'dataNasc': document.getElementById('nascimento').value
+	    		
+	    		
+	     };
 
 	     setarUsuario.send(JSON.stringify(new_usuario)); 
+};

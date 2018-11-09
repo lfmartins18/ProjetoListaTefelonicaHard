@@ -25,29 +25,27 @@ table, th, h2 {
 		</tr>
 	</table>
 
-	<form action="/action_page.php">
 	
 		<label>Nome:</label>
 		<br> 
-			<input type="text" name="Nome" id="nome"> 
+			<input type="text" name="Nome" id="nome" value=""> 
 		<br> 
 		<label>Email:</label><br> <input
-			type="email" name="Email" id="email"> 
+			type="email" name="Email" id="email" value=""> 
 			<br>
 		<label>Senha:</label>
 		<br> 
 		
-		<input type="password" name="Senha" id="senha"> 
+		<input type="password" name="Senha" id="senha" value=""> 
 		<br>
 		
 		<label>Data de nascimento</label>
 		<br> 
 		
-		<input type="text" name="Nascimento" id="nascimento"> 
+		<input type="text" name="Nascimento" id="nascimento" value=""> 
 		<br>
 		
-		<input type="button" value="Enviar" onclick="setarDados()">
-	</form>
+		<button onclick="setarDados()">Enviar</button>
 
 
 </body>
