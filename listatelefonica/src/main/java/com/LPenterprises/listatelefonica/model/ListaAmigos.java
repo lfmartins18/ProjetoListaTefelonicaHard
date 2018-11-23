@@ -51,5 +51,9 @@ public class ListaAmigos {
 		this.listabloqueados.add(listaBlock);
 	
 	}
+	public void addListaAmigos(ListaFavoritos listaFavorito) {
+		this.listafavoritos.add(listaFavorito);
+	
+	}
 	
 }
