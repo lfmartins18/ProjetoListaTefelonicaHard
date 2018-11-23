@@ -6,23 +6,23 @@ import javax.persistence.*;
 
 @Entity
 public class Usuario{
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	@Column (nullable=false)
 	private String nome;
-	
+
 	@Column (nullable=false,  unique=true)
 	private String email;
-	
+
 	@Column(nullable=false)
 	private String senha;
-	
+
 	@Column(nullable=false)
 	private LocalDate dataNasc;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -63,8 +63,8 @@ public class Usuario{
 		this.dataNasc = dataNasc;
 	}
 
-	
-	
-	
+
+
+
 
 }

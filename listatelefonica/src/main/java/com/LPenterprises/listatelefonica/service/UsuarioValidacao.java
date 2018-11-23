@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class UsuarioValidacao {
 
-	private static final String NOME_PATTERN = "^[A-Z][a-z]* [ [A-Z][a-z]]*";
+	private static final String NOME_PATTERN = "^[A-Z][a-z]* [[A-Z][a-z]]*";
 
 	private static final String EMAIL_PATTERN =  "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
 			+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
@@ -35,7 +35,7 @@ public class UsuarioValidacao {
 	}
 
 	public boolean validarEmail(String email) {
-		
+
 		pattern = Pattern.compile(EMAIL_PATTERN, Pattern.CASE_INSENSITIVE);		
 		matcher= pattern.matcher(email);
 		return matcher.matches();
@@ -43,6 +43,9 @@ public class UsuarioValidacao {
 	}
 
 	public boolean validarSenha(String senha) {
-		return true;
+		if(senha.length() > 9 && senha.matches("[A-Za-z0-9]+")) {
+			return true;
+		}
+		return false;
 	}
 }

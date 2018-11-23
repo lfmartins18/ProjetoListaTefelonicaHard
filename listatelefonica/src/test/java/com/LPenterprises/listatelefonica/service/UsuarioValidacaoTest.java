@@ -6,7 +6,6 @@ import org.junit.Test;
 
 public class UsuarioValidacaoTest {
 
-
 	@Test
 	public void naoPodeValidarNomeComNumeros() {
 		UsuarioValidacao usuarioValidacao = new UsuarioValidacao();
@@ -87,16 +86,44 @@ public class UsuarioValidacaoTest {
 	}
 
 	@Test
-	public void naoPodeValidarSenhaComMaisDeQuinzeCaracteres() {
+	public void naoPodeValidarSenhaComMenosDeDezCaracteres() {
 		UsuarioValidacao usuarioValidacao = new UsuarioValidacao();
 
 		String nome = "Luiz Fernando Martins da Silva";
-		String email = "luiz$%18#659@gmail.com";
-		String senha = "1234567890luizfernando15";
+		String email = "luiz18659gmailcom";
+		String senha = "12345678";
+
+		boolean ehUsuarioValido = usuarioValidacao.validarUsuario(nome, email, senha);
+
+		assertEquals(false, ehUsuarioValido);
+	}
+	
+	@Test
+	public void naoPodeValidarSenhaComCaracteresEspeciais() {
+		UsuarioValidacao usuarioValidacao = new UsuarioValidacao();
+
+		String nome = "Luiz Fernando Martins da Silva";
+		String email = "luiz18659gmailcom";
+		String senha = "12345678%$#@+";
 
 		boolean ehUsuarioValido = usuarioValidacao.validarUsuario(nome, email, senha);
 
 		assertEquals(false, ehUsuarioValido);
 	}
 
+	@Test
+	public void permitirValidarComTudoCorreto() {
+		UsuarioValidacao usuarioValidacao = new UsuarioValidacao();
+
+		String nome = "Luiz Fernando";
+		String email = "luiz18659@gmail.com";
+		String senha = "123456789000";
+		
+		boolean ehUsuarioValido = usuarioValidacao.validarUsuario(nome, email, senha);
+		
+		assertEquals(true, ehUsuarioValido);
+	}
+
+	
+	
 }
