@@ -17,7 +17,7 @@ import org.springframework.web.client.ResourceAccessException;
 
 import com.LPenterprises.listatelefonica.exception.ResourceNotFoundException;
 import com.LPenterprises.listatelefonica.model.Usuario;
-import com.LPenterprises.listatelefonica.repositories.UsuarioRepository;
+import com.LPenterprises.listatelefonica.repositorie.UsuarioRepository;
 
 @RestController
 public class UsuarioController {

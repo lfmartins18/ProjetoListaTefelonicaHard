@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.LPenterprises.listatelefonica.exception.ResourceNotFoundException;
 import com.LPenterprises.listatelefonica.model.Regiao;
-import com.LPenterprises.listatelefonica.repositories.RegiaoRepository;
+import com.LPenterprises.listatelefonica.repositorie.RegiaoRepository;
 
 @RestController
 public class RegiaoController {

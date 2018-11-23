@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.LPenterprises.listatelefonica.exception.ResourceNotFoundException;
 import com.LPenterprises.listatelefonica.model.Pessoa;
-import com.LPenterprises.listatelefonica.repositories.PessoaRepository;
+import com.LPenterprises.listatelefonica.repositorie.PessoaRepository;
 
 @RestController
 public class PessoaController {

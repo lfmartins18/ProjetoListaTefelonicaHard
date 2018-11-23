@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.LPenterprises.listatelefonica.exception.ResourceNotFoundException;
 import com.LPenterprises.listatelefonica.model.ListaBlock;
-import com.LPenterprises.listatelefonica.repositories.ListaBlockRepository;
+import com.LPenterprises.listatelefonica.repositorie.ListaBlockRepository;
 
 @RestController
 public class ListaBlockController {

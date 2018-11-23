@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.LPenterprises.listatelefonica.exception.ResourceNotFoundException;
 import com.LPenterprises.listatelefonica.model.ListaAmigos;
-import com.LPenterprises.listatelefonica.repositories.ListaAmigosRepository;
+import com.LPenterprises.listatelefonica.repositorie.ListaAmigosRepository;
 
 @RestController
 public class ListaAmigosController {

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.LPenterprises.listatelefonica.exception.ResourceNotFoundException;
 import com.LPenterprises.listatelefonica.model.Endereco;
-import com.LPenterprises.listatelefonica.repositories.EnderecoRepository;
+import com.LPenterprises.listatelefonica.repositorie.EnderecoRepository;
 
 @RestController
 public class EnderecoController {

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.LPenterprises.listatelefonica.exception.ResourceNotFoundException;
 import com.LPenterprises.listatelefonica.model.ListaFavoritos;
-import com.LPenterprises.listatelefonica.repositories.ListaFavoritosRepositoty;
+import com.LPenterprises.listatelefonica.repositorie.ListaFavoritosRepositoty;
 
 @RestController
 public class FavoritosController {
