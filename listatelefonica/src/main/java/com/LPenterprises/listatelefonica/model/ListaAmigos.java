@@ -17,41 +17,35 @@ public class ListaAmigos {
 	
 	@OneToMany
 	@Column(name = "lista_block")
-	private List<ListaBlock> listabloqueados;
+	private List<Pessoa> listabloqueados;
 	
 	@OneToMany
 	@Column(name = "lista_favorite")
-	private List<ListaFavoritos> listafavoritos;
+	private List<Pessoa> listafavoritos;
 
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public List<ListaBlock> getListabloqueados() {
+	public List<Pessoa> getListabloqueados() {
 		return listabloqueados;
 	}
-
-	public void setListabloqueados(List<ListaBlock> listabloqueados) {
+	public void setListabloqueados(List<Pessoa> listabloqueados) {
 		this.listabloqueados = listabloqueados;
 	}
-
-	public List<ListaFavoritos> getListafavoritos() {
+	public List<Pessoa> getListafavoritos() {
 		return listafavoritos;
 	}
-
-	public void setListafavoritos(List<ListaFavoritos> listafavoritos) {
+	public void setListafavoritos(List<Pessoa> listafavoritos) {
 		this.listafavoritos = listafavoritos;
 	}
-	
-	public void addListaAmigos(ListaBlock listaBlock) {
+	public void addListaAmigos1(Pessoa listaBlock) {
 		this.listabloqueados.add(listaBlock);
 	
 	}
-	public void addListaAmigos(ListaFavoritos listaFavorito) {
+	public void addListaAmigos(Pessoa listaFavorito) {
 		this.listafavoritos.add(listaFavorito);
 	
 	}

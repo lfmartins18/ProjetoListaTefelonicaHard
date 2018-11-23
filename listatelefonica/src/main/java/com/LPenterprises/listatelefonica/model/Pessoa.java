@@ -7,8 +7,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.ManyToAny;
 
 @Entity
 public class Pessoa {
@@ -30,8 +33,8 @@ public class Pessoa {
 	private Endereco endereco;
 
 	@Column(name = "listagem_amigos")
-	@OneToMany
-	private List<ListaAmigos> listaamigos;
+	@ManyToMany
+	private List<Pessoa> listaamigos;
 
 	public Long getId() {
 		return id;
@@ -65,15 +68,15 @@ public class Pessoa {
 		this.endereco = endereco;
 	}
 
-	public List<ListaAmigos> getListaamigos() {
+	public List<Pessoa> getListaamigos() {
 		return listaamigos;
 	}
 
-	public void setListaamigos(List<ListaAmigos> listaamigos) {
+	public void setListaamigos(List<Pessoa> listaamigos) {
 		this.listaamigos = listaamigos;
 	}
 
-	public void addListaAmigos(ListaAmigos listaamigos) {
+	public void addListaAmigos(Pessoa listaamigos) {
 		this.listaamigos.add(listaamigos);
 	
 	}

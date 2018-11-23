@@ -17,8 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.LPenterprises.listatelefonica.exception.ResourceNotFoundException;
 import com.LPenterprises.listatelefonica.model.ListaAmigos;
-import com.LPenterprises.listatelefonica.model.ListaBlock;
-import com.LPenterprises.listatelefonica.model.ListaFavoritos;
+import com.LPenterprises.listatelefonica.model.Pessoa;
 import com.LPenterprises.listatelefonica.repositorie.ListaAmigosRepository;
 
 @RestController
@@ -49,24 +48,24 @@ public class ListaAmigosController {
 
 	}
 
-	@PutMapping("/lista_amigos/{listaAmigosId}/addlistabloqueados")
+	@PutMapping("/lista_amigos/{listaAmigosId}/addlistablock")
 	public ListaAmigos addAmigosblock(@PathVariable Long listaAmigosId,
-			@Valid @RequestBody ListaBlock listaBlock) {
+			@Valid @RequestBody Pessoa listaBlock) {
 		return amigosRepository.findById(listaAmigosId)
-				.map(listaAmigos-> {
-					listaAmigos.addListaAmigos(listaBlock);
-					return amigosRepository.save(listaAmigos);
+				.map(pessoa-> {
+					pessoa.addListaAmigos(listaBlock);
+					return amigosRepository.save(pessoa);
 				}).orElseThrow(()-> new ResourceNotFoundException("Amigo bloqueado não encortado:" + listaAmigosId) );
 
 	}
 
 	@PutMapping("/lista_amigos/{listaAmigosFavoId}/addlistaFavoritos")
-	public ListaAmigos addAmigosblock(@PathVariable Long listaAmigosFavoId,
-			@Valid @RequestBody ListaFavoritos listafavorito) {
+	public ListaAmigos addAmigosFavoritos(@PathVariable Long listaAmigosFavoId,
+			@Valid @RequestBody Pessoa listafavorito) {
 		return amigosRepository.findById(listaAmigosFavoId)
-				.map(listaAmigos-> {
-					listaAmigos.addListaAmigos(listafavorito);
-					return amigosRepository.save(listaAmigos);
+				.map(pessoa-> {
+					pessoa.addListaAmigos(listafavorito);
+					return amigosRepository.save(pessoa);
 				}).orElseThrow(()-> new ResourceNotFoundException("Amigo bloqueado não encortado:" + listaAmigosFavoId) );
 
 	}

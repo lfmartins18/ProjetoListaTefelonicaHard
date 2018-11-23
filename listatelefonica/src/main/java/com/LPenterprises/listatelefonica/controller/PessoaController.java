@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.LPenterprises.listatelefonica.exception.ResourceNotFoundException;
 import com.LPenterprises.listatelefonica.model.ListaAmigos;
-import com.LPenterprises.listatelefonica.model.ListaFavoritos;
 import com.LPenterprises.listatelefonica.model.Pessoa;
 import com.LPenterprises.listatelefonica.repositorie.PessoaRepository;
 
@@ -56,13 +55,13 @@ public class PessoaController {
 	}
 
 	@PutMapping("/pessoa/{pessoaId}/addListaAmigos")
-	public Pessoa addAmigosblock(@PathVariable Long listaAmigosId,
-			@Valid @RequestBody ListaAmigos listaAmigos) {
-		return pessoaRepository.findById(listaAmigosId)
-				.map(lista-> {
-					lista.addListaAmigos(listaAmigos);
-					return pessoaRepository.save(lista);
-				}).orElseThrow(()-> new ResourceNotFoundException("Amigo bloqueado não encortado:" + listaAmigosId));
+	public Pessoa addListaAmigos(@PathVariable Long pessoaId,
+			@Valid @RequestBody Pessoa amigo) {
+		return pessoaRepository.findById(pessoaId)
+				.map(pessoa-> {
+					pessoa.addListaAmigos(amigo);
+					return pessoaRepository.save(pessoa);
+				}).orElseThrow(()-> new ResourceNotFoundException("Amigo bloqueado não encortado:" + pessoaId));
 
 	}
 
