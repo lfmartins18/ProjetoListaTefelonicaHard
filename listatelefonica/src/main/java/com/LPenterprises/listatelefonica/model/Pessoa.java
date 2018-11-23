@@ -73,5 +73,9 @@ public class Pessoa {
 		this.listaamigos = listaamigos;
 	}
 
+	public void addListaAmigos(ListaAmigos listaamigos) {
+		this.listaamigos.add(listaamigos);
+	
+	}
 
 }
