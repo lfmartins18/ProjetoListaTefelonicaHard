@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>Usuario</title>
+<meta charset="utf-8">
+<style>
+table, th, h2 {
+	border: 1px solid black;
+}
+</style>
+<script type="text/javascript" src="js/usuario.js"></script>
+</head>
+
+<body>
+
+	<h2 style="text-align: center">Posições</h2>
+
+
+	<table id="Usuario" style="width: 100%">
+		<tr>
+			<th>Nome</th>
+			<th>Email</th>
+			<th>Senha</th>
+			<th>Data nascimento</th>
+		</tr>
+	</table>
+
+	
+		<label>Nome:</label>
+		<br> 
+			<input type="text" name="Nome" id="nome" value=""> 
+		<br> 
+		<label>Email:</label><br> <input
+			type="email" name="Email" id="email" value=""> 
+			<br>
+		<label>Senha:</label>
+		<br> 
+		
+		<input type="password" name="Senha" id="senha" value=""> 
+		<br>
+		
+		<label>Data de nascimento</label>
+		<br> 
+		
+		<input type="text" name="Nascimento" id="nascimento" value=""> 
+		<br>
+		
+		<button onclick="setarDados()">Enviar</button>
+
+
+</body>
+
+</html>

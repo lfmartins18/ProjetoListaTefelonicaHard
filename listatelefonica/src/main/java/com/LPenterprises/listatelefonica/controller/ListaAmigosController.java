@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.LPenterprises.listatelefonica.exception.ResourceNotFoundException;
 import com.LPenterprises.listatelefonica.model.ListaAmigos;
+import com.LPenterprises.listatelefonica.model.ListaBlock;
 import com.LPenterprises.listatelefonica.repositorie.ListaAmigosRepository;
 
 @RestController
@@ -45,6 +47,18 @@ public class ListaAmigosController {
     			}).orElseThrow(() -> new ResourceNotFoundException("Lista de amigos não encontradas: " +listaamigosId));
     			
     }
+    
+    @PutMapping("/lista_amigos/{listaAmigosId}/addlistabloqueados")
+    public ListaAmigos addAmigosblock(@PathVariable Long listaAmigosId,
+    						@Valid @RequestBody ListaBlock listaBlock) {
+								return amigosRepository.findById(listaAmigosId)
+										.map(listaAmigos-> {
+											listaAmigos.addListaAmigos(listaBlock);
+											return amigosRepository.save(listaAmigos);
+											}).orElseThrow(()-> new ResourceNotFoundException("Amigo bloqueado não encortado:" + listaAmigosId) );
+    	
+    }
+    
 
     @DeleteMapping("/lista_amigos/{listaamigosId}")
     public ResponseEntity<?> deleteListaAmigos(@PathVariable Long listaamigosId){

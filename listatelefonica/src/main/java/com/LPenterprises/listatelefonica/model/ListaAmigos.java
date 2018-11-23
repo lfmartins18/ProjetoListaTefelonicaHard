@@ -47,5 +47,9 @@ public class ListaAmigos {
 		this.listafavoritos = listafavoritos;
 	}
 	
+	public void addListaAmigos(ListaBlock listaBlock) {
+		this.listabloqueados.add(listaBlock);
+	
+	}
 	
 }
