@@ -7,7 +7,7 @@ public class RegiaoValidacao {
 
 	//private static final String siglaEstados[]={"AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"};
 
-	private static final String CEP_PATTERN = "\\d{5}[-]\\d{2}";
+	private static final String CEP_PATTERN = "\\d{5}-\\d{3}";
 
 	private Pattern pattern;
 
@@ -23,10 +23,10 @@ public class RegiaoValidacao {
 
 	public boolean validarNacionalidade(String nacionalidade) {
 
-		if(!nacionalidade.equals("Brasileira")) {
-			return false;
+		if(nacionalidade.equals("Brasileira")) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	public boolean validarEstado(String estado) {
@@ -42,7 +42,7 @@ public class RegiaoValidacao {
 
 	public boolean validarCidade(String cidade) {
 
-		if(cidade.length() > 5 || cidade.length() < 32) {
+		if(cidade.length() > 5 && cidade.length() < 32) {
 			return true;
 		}
 		return false;
@@ -50,9 +50,11 @@ public class RegiaoValidacao {
 
 	public boolean validarCep(String cep) {
 
-		pattern = Pattern.compile(CEP_PATTERN, Pattern.CASE_INSENSITIVE);		
-		matcher= pattern.matcher(cep);
-		return matcher.matches();
+		if (cep.matches(CEP_PATTERN)){
+			return true;
+		}
+		return false;
+
 	}
 
 }

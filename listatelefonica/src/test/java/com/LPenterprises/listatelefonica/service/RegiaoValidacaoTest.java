@@ -59,7 +59,7 @@ public class RegiaoValidacaoTest {
 
 		String nacionalidade = "Brasileira";
 		String estado = "AL";
-		String cidade = "Vila Bela da Santíssima Trindade";
+		String cidade = "Vila Bela da Santíssima Trindadehghhg";
 		String cep = "57100-000";
 
 		boolean ehRegiaoValida = regiaoValidacao.validarRegiao(nacionalidade, estado, cidade, cep);
@@ -74,8 +74,8 @@ public class RegiaoValidacaoTest {
 
 		String nacionalidade = "Brasileira";
 		String estado = "AL";
-		String cidade = "Vila Bela da Santíssima Trindade";
-		String cep = "57100-000000";
+		String cidade = "Rio Largo";
+		String cep = "57100-000000//";
 
 		boolean ehRegiaoValida = regiaoValidacao.validarRegiao(nacionalidade, estado, cidade, cep);
 
@@ -83,5 +83,21 @@ public class RegiaoValidacaoTest {
 
 	}
 
+	@Test
+	public void permitirValidarComTudoCorreto() {
+		RegiaoValidacao regiaoValidacao = new RegiaoValidacao();
+
+		String nacionalidade = "Brasileira";
+		String estado = "AL";
+		String cidade = "Rio Largo";
+		String cep = "57100-000";	
+		
+		boolean ehRegiaoValida = regiaoValidacao.validarRegiao(nacionalidade, estado, cidade, cep);
+		
+		assertEquals(true, ehRegiaoValida);
+	}
+
+	
+	
 }
 
