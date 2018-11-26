@@ -45,7 +45,7 @@ public class RegiaoValidacao {
 		if(cidade.length() > 5 || cidade.length() < 32) {
 			return true;
 		}
-		return true;
+		return false;
 	}
 
 	public boolean validarCep(String cep) {
