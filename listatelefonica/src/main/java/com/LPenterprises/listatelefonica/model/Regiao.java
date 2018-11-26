@@ -22,7 +22,7 @@ public class Regiao {
 	private String cidade;
 	
 	@Column(nullable=false)
-	private Integer cep;
+	private String cep;
 
 	public Long getId() {
 		return id;
@@ -56,11 +56,11 @@ public class Regiao {
 		this.cidade = cidade;
 	}
 
-	public Integer getCep() {
+	public String getCep() {
 		return cep;
 	}
 
-	public void setCep(Integer cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
     
