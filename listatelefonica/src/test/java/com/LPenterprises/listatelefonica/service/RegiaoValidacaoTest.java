@@ -7,7 +7,6 @@ import org.junit.Test;
 public class RegiaoValidacaoTest {
 
    
-
 	@Test
 	public void naoValidarNacionalidadeSemSerABrasileira() {
 		RegiaoValidacao regiaoValidacao = new RegiaoValidacao();

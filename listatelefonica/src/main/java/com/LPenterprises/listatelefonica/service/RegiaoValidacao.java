@@ -7,7 +7,7 @@ public class RegiaoValidacao {
 
 	//private static final String siglaEstados[]={"AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"};
 
-	private static final String CEP_PATTERN = "\\d{5}-\\d{3}";
+	private static final String CEP_PATTERN = "^\\d{5}[-]\\d{3}$";
 
 	private Pattern pattern;
 
