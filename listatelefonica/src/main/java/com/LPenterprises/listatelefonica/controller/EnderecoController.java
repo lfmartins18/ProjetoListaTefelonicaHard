@@ -24,7 +24,7 @@ public class EnderecoController {
 	@Autowired
 	private EnderecoRepository enderecoRepository;
 	
-	@GetMapping("/enderco")
+	@GetMapping("/endereco")
 	public Page<Endereco> getEnderecos (Pageable pageable){
 		return enderecoRepository.findAll(pageable);
 	}
