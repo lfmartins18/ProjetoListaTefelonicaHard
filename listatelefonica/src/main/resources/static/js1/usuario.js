@@ -71,7 +71,8 @@ function setarDados(){
 		body: JSON.stringify(novo_usuario)
 	
 	}).then(function(response){
-		criarTabela();
+		alert("Dados cadastrados");
+		window.location.href = "http://localhost:8080/lista.html";
 	}).catch(function(error){
 		console.log(error);
 	});
@@ -106,6 +107,15 @@ function criarTabela(){
 	}).catch(function(error){
 		console.log(error);
 	});
+}
+function limpar(){
+	document.getElementById('nome').value=''; 
+	document.getElementById('email').value='';
+	document.getElementById('senha').value=''; 
+	document.getElementById('nascimento').value='';
+	
+	alert("Dados apagados!");
+
 }
 
 criarTabela();
