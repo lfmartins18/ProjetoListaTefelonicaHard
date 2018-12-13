@@ -9,14 +9,14 @@ function criarTabela(){
 
 				let tb = document.getElementById("usuario");
 
-				tb.innerHTML = "<tr><th>Nome</th><th>Email</th>" +
+				tb.innerHTML = "<tr><th>Id</th><th>Nome</th><th>Email</th>" +
 				"<th>Senha</th><th>Nascimento</th></tr>"
 
 				for(let i=0; i<data.content.length; i++){
 
 					let p = data.content[i];
 
-					tb.innerHTML += `<tr><th>${p.nome}</th><th>${p.email}</th><th>${p.senha}</th><th>${p.dataNasc}</th></tr>`
+					tb.innerHTML += `<tr><th>${p.id}</th><th>${p.nome}</th><th>${p.email}</th><th>${p.senha}</th><th>${p.dataNasc}</th> <th><button onclick="apagarUsuario(${p.id})">Apagar</button></th></tr>`
 
 				}
 
@@ -24,6 +24,18 @@ function criarTabela(){
 
 		}
 	}).catch(function(error){
+		console.log(error);
+	});
+}
+
+function apagarUsuario(id){
+	fetch("/usuario/"+id,{
+		method: "DELETE",
+		
+	}).then(function (response){
+		
+		criarTabela();
+	}).catch(function (error){
 		console.log(error);
 	});
 }
