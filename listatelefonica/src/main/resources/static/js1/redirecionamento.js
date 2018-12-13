@@ -16,7 +16,9 @@ function criarTabela(){
 
 					let p = data.content[i];
 
-					tb.innerHTML += `<tr><th>${p.id}</th><th>${p.nome}</th><th>${p.email}</th><th>${p.senha}</th><th>${p.dataNasc}</th> <th><button onclick="apagarUsuario(${p.id})">Apagar</button></th></tr>`
+					tb.innerHTML += `<tr><th>${p.id}</th><th>${p.nome}</th><th>${p.email}</th><th>${p.senha}</th><th>${p.dataNasc}</th> 
+					 <th><button style="padding: 5px; color: #DC143C; font-family: Courier New; font-size: 20px; border-bottom: 1px solid black;" 
+					 onclick="apagarUsuario(${p.id})">Apagar</button></th></tr>`
 
 				}
 
@@ -38,5 +40,13 @@ function apagarUsuario(id){
 	}).catch(function (error){
 		console.log(error);
 	});
+}
+
+function mudarCor(){
+	document.getElementById("mudar").style.color = "red";
+}
+
+function voltarCor() {
+    document.getElementById("mudar").style.color = "green";
 }
 criarTabela();
