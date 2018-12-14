@@ -16,7 +16,7 @@ function logarDados(){
 	
 	}).then(function(response){
 
-		window.location.href = "http://localhost:8080/index.html";
+		window.location.href = "http://localhost:8080/cadastrarContato.html";
 	}).catch(function(error){
 		console.log(error);
 	});

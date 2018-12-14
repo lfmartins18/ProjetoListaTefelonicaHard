@@ -46,7 +46,7 @@
 <link href="css1/new-age.css" rel="stylesheet">
 
 <!--para inserir dados -->
-<script type="text/javascript" src="js1/usuario.js"></script>
+<script type="text/javascript" src="js1/cadastroContato.js"></script>
 <!--===============================================================================================-->
 </head>
 <body>
@@ -82,26 +82,25 @@
 			</div>
 
 			<form class="contact1-form validate-form">
-				<span class="contact1-form-title"> Cadastrar seus contatos </span>
-				<div class="wrap-input1 validate-input"
+				<span class="contact1-form-title"> Cadastrar seus contatos! </span>
+				<!--  <div class="wrap-input1 validate-input"
 					data-validate="Nome é obrigatório">
-					<input class="input1" type="text" name="Nome" placeholder="Nome "
-						value="" id="nome" required="true"> <span
-						class="shadow-input1"></span>
-				</div>
+					<input class="input1" type="text" name="Nome" placeholder="Nome " value="" id="nome" required="true">
+					 <span
+						   class="shadow-input1"></span>
+				</div> -->
 
-				<div class="wrap-input1 validate-input"
-					data-validate="ex: 82 99999-9999" required="true">
-					<input class="input1" type="text" name="Contato"
-						placeholder="Contato" value="" id="Contato"> <span
+				<div class="wrap-input1 validate-input" data-validate="ex: 82 99999-9999" required="true">
+					<input class="input1" type="text" name="Contato" placeholder="Contato" value="" id="contato">
+					 <span
 						class="shadow-input1"></span>
 				</div>
 
 
 
 				<div class="container-contact1-form-btn">
-					<button class="contact1-form-btn" onclick="setarDados()">
-						<span> Cadastrar <i class="fa fa-long-arrow-right"
+					<button type="button" class="contact1-form-btn" onclick="addContato()">
+						<span> Add Contato <i class="fa fa-long-arrow-right"
 							aria-hidden="true"></i>
 						</span>
 					</button>
@@ -112,7 +111,7 @@
 		</div>
 		
 			
-		<table id="ListaContato" style="width: 100%" >	
+		<table id="lista_contato" style="width: 100%" >	
 		
 			<tr>
 				<th>Id</th>
