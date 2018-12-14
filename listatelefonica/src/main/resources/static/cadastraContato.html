@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Login</title>
+	<title> Telefonico</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -19,9 +19,10 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+    <!--para inserir dados -->
+	<script type="text/javascript" src="js1/usuario.js"></script>
 <!--===============================================================================================-->
-
- <script src="js1/login.js"></script> 
 </head>
 <body>
 		
@@ -33,26 +34,42 @@
 
 			<form class="contact1-form validate-form">
 				<span class="contact1-form-title">
-						Login
+						Cadastro
 				</span>
-				<div class="wrap-input1 validate-input" data-validate = "E-mail válido é necessário: ex@abc.xyz">
-					<input class="input1" type="text" id="email" placeholder="Email">
+				<div class="wrap-input1 validate-input" data-validate = "Nome é obrigatório">
+					<input class="input1" type="text" name="Nome" placeholder="Nome " value="" id="nome" required="true">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "E-mail válido é necessário: ex@abc.xyz" required="true">
+					<input class="input1" type="text" name="email" placeholder="Email" value="" id="email">
 					<span class="shadow-input1"></span>
 				</div>
 
 				<div class="wrap-input1 validate-input" data-validate = "Subject is required">
-					<input class="input1" type="password" id="senha" placeholder="senha">
+					<input class="input1" type="password" name="senha" placeholder="senha"  value="" id="senha" required="true">
 					<span class="shadow-input1"></span>
 				</div>
 
+				<div class="wrap-input1 validate-input" data-validate = "Subject is required">
+						<input class="input1" type="text" name="Data nascimento" placeholder="Data nascimento"  value="" id="nascimento" required="true">
+						<span class="shadow-input1"></span>
+					</div>
+
 				<div class="container-contact1-form-btn">
-					<button type="button" class="contact1-form-btn" onclick="logarDados()">
+					<button class="contact1-form-btn" onclick="setarDados()">
 						<span>
-								Login
+								Cadastrar
 							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
 						</span>
 					</button> 
 					
+					<button class="contact1-form-btn1" onclick="limpar()">
+							<span>
+									Cancelar
+								<i class="fa fa-ban" aria-hidden="true"></i>
+							</span>
+					</button> 
 				</div>
 				
 			</form>
@@ -85,7 +102,7 @@
 </script>
 
 <!--===============================================================================================-->
-	<!-- <script src="js/main.js"></script> -->
+	<!--<script src="js/main.js"></script>-->
 
 </body>
 </html>
