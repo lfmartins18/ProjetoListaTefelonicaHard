@@ -8,4 +8,6 @@ import com.LPenterprises.listatelefonica.model.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
+	public Usuario findByNomeAndSenha(String email, String senha);
+	
 }

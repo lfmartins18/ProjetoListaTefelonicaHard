@@ -1,5 +1,7 @@
 package com.LPenterprises.listatelefonica.controller;
 
+import java.util.Map;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,11 @@ public class UsuarioController {
 	public Usuario createUsuario(@Valid @RequestBody Usuario usuario) {
 		return usuarioRepository.save(usuario);
 		
+	}
+	
+	@PostMapping("/login")
+	public Usuario login(Map<String, String> logar) {
+		return usuarioRepository.findByNomeAndSenha(logar.get("email"), logar.get("senha"));
 	}
 	
 	@PutMapping("/usuario/{usuarioId}")
