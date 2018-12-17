@@ -90,8 +90,7 @@ function criarTabela(){
 
 				let tb = document.getElementById("usuario");
 
-				tb.innerHTML = "<tr><th>Nome</th><th>Email</th>" +
-				"<th>Senha</th><th>Nascimento</th></tr>"
+				tb.innerHTML = "<tr><th>Nome</th><th>Email</th><th>Senha</th><th>Nascimento</th></tr>"
 
 				for(let i=0; i<data.content.length; i++){
 
