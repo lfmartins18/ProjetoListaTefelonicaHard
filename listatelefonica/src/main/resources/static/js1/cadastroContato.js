@@ -1,19 +1,19 @@
 function addContato(){
 	let contato = document.getElementById("contato").value;
 
-	let novo_usuario = {
+	let add_contato = {
 			contato: contato,
 	};
 
-	fetch("/login", {
+	fetch("/pessoa", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/JSON"
 		},
-		body: JSON.stringify(novo_usuario)
-	
+		body: JSON.stringify(add_contato)
+	    
 	}).then(function(response){
-
+	criarTabela();	
 	}).catch(function(error){
 		console.log(error);
 	});
@@ -47,4 +47,4 @@ function criarTabela(){
 	});
 }
 
-criarTabela();
+criarTabela();	
